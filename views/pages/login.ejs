@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Chatiing App</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS -->
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/inbox.css" />
+    </head>
+    <body>
+        <div class="container-fluid wraper">
+            <div class="container">
+                <nav
+                    class="
+                        navbar navbar-expand-lg navbar-expand-md navbar-light
+                    "
+                >
+                    <a class="navbar-brand text-white" href="#">
+                        <strong>JHNChattingApp</strong>
+                    </a>
+                    <button
+                        class="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div
+                        class="collapse navbar-collapse"
+                        id="navbarSupportedContent"
+                    >
+                        <ul class="navbar-nav ml-auto px-4 text-white">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">User</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/logout">Logout</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/login">Login</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Inbox</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="card chattingSection m-auto my-5">
+                <div class="card-body">
+                    <h2 class="text-white p-3">Login in your account</h2>
+                    <form class="loginForm text-white" action="" method="get">
+                        <div class="mb-3">
+                            <label class="form-label" for="name"
+                                >Enter email or phone</label
+                            >
+                            <input
+                                class="form-control"
+                                type="text"
+                                name="name"
+                                id="loginEmail"
+                                placeholder="Enter Email or Phone"
+                            />
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="password"
+                                >Enter password</label
+                            >
+                            <input
+                                class="form-control"
+                                type="password"
+                                name="password"
+                                id="loginPassword"
+                                placeholder="Enter password"
+                            />
+                            <div class="invalid-feedback"></div>
+                        </div>
+
+                        <button
+                            class="btn btn-primary mt-4 btn-block"
+                            type="submit"
+                        >
+                            Login
+                        </button>
+                        <div id="popUp" class="register mt-4">
+                            Register account <i class="fa fa-plus"></i>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+
+        <div id="myModal">
+            <div id="registerSection" class="card chattingSection m-auto my-5">
+                <span class="closeBtn"> &times;</span>
+                <div class="card-body">
+                    <h2 class="text-white p-3">Register account</h2>
+                    <form
+                        class="loginForm text-white needs-validation"
+                        action="/register"
+                        method="post"
+                        enctype="multipart/form-data"
+                        id="user-form"
+                    >
+                        <div class="mb-3">
+                            <label class="form-label" for="name">Name</label>
+                            <input
+                                class="form-control"
+                                type="text"
+                                name="name"
+                                id="name"
+                                placeholder="Enter name"
+                            />
+                            <p class="error-message">This is an error</p>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="name"
+                                >Enter email or phone</label
+                            >
+                            <input
+                                class="form-control"
+                                type="text"
+                                name="email"
+                                id="email"
+                                placeholder="Enter Email or Phone"
+                            />
+                            <p class="error-message"></p>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label" for="password"
+                                >Enter password</label
+                            >
+                            <input
+                                class="form-control"
+                                type="password"
+                                name="password"
+                                id="password"
+                                placeholder="Enter password"
+                            />
+                            <p class="error-message"></p>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="avater-upload">
+                                <div class="avater-icon">
+                                    <i class="fa fa-paperclip"></i>
+                                    Upload your Avater
+                                </div>
+                            </label>
+                            <input
+                                id="avater-upload"
+                                class="form-control"
+                                type="file"
+                                name="avater"
+                            />
+                            <p class="error-message"></p>
+                        </div>
+
+                        <button
+                            id="submitBtn"
+                            class="btn btn-primary btn-block"
+                            type="submit"
+                        >
+                            Register
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"
+        ></script>
+        <script src="/script/script.js"></script>
+        <script>
+            const myModal = document.getElementById("myModal");
+            const registerSection = document.getElementById("registerSection");
+            const popupBtn = document.getElementById("popUp");
+            const closeBtn = document.getElementsByClassName("closeBtn")[0];
+
+            popupBtn.addEventListener("click", openModal);
+            closeBtn.addEventListener("click", closeModal);
+
+            function closeModal(event) {
+                myModal.style.display = "none";
+                registerSection.style.display = "none";
+            }
+
+            function openModal(event) {
+                myModal.style.display = "block";
+                registerSection.style.display = "block";
+            }
+
+            const form = document.getElementById("user-form");
+
+            form.addEventListener("submit", async function (event) {
+                event.preventDefault();
+                let formData = new FormData(form);
+
+                let response = await fetch("/register", {
+                    method: "POST",
+                    body: formData,
+                });
+
+                let result = await response.json();
+                
+                if(result.error){
+                    
+                }
+            });
+        </script>
+    </body>
+</html>

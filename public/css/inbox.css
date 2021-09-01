@@ -1,0 +1,116 @@
+.card.chattingSection {
+    max-width: 35%;
+    min-width: 430px;
+    margin-top: 2rem !important;
+}
+
+form.loginForm {
+    width: 79%;
+    margin: auto;
+    padding: 30px 7px;
+}
+
+button {
+    width: 15.5rem;
+    margin-top: 20px;
+}
+.register {
+    width: 100%;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#avater-upload {
+    display: none;
+}
+
+.avater-icon {
+    font-size: 18px;
+    border: 1px solid black;
+    width: 100%;
+    padding: 3px 13px;
+    cursor: pointer;
+}
+
+div#myModal {
+    position: absolute;
+    padding-top: 3rem;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    display: none;
+}
+div#registerSection {
+    width: 40%;
+    height: 549px;
+    box-shadow: 0px 0px 8px 0px white;
+    border: 1px solid #007bff;
+    display: none;
+    animation: popupModal;
+    animation-duration: 0.2s;
+    transition: 0.2s;
+}
+span.closeBtn {
+    color: white;
+    display: flex;
+    font-size: 25px;
+    font-weight: 900;
+    border: 1px solid #dee2e6;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #002631;
+    position: absolute;
+    right: -11px;
+    top: -10px;
+    cursor: pointer;
+}
+
+@keyframes popupModal {
+    0% {
+        transform: scale(0);
+    }
+    20% {
+        transform: scale(0.2);
+    }
+    40% {
+        transform: scale(0.4);
+    }
+    60% {
+        transform: scale(0.6);
+    }
+    80% {
+        transform: scale(0.8);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes closePopup {
+    0% {
+        transform: scale(1);
+    }
+    20% {
+        transform: scale(0.8);
+    }
+    40% {
+        transform: scale(0.6);
+    }
+    60% {
+        transform: scale(0.4);
+    }
+    80% {
+        transform: scale(0.2);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
