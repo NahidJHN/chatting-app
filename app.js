@@ -1,3 +1,4 @@
+require("dotenv")
 const express = require("express");
 const { errorHundle, notFoundHundle } = require("./middlewares/errorHundle");
 const app = express();

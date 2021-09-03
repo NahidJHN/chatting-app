@@ -74,7 +74,12 @@
             <div class="card chattingSection m-auto my-5">
                 <div class="card-body">
                     <h2 class="text-white p-3">Login in your account</h2>
-                    <form class="loginForm text-white" action="" method="get">
+                    <form
+                        id="login-form"
+                        class="loginForm text-white"
+                        action="/login"
+                        method="post"
+                    >
                         <div class="mb-3">
                             <label class="form-label" for="name"
                                 >Enter email or phone</label
@@ -212,7 +217,7 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"
         ></script>
-        <script src="/script/script.js"></script>
+        <!-- <script src="/script/script.js"></script> -->
         <script>
             const myModal = document.getElementById("myModal");
             const registerSection = document.getElementById("registerSection");
@@ -244,10 +249,25 @@
                 });
 
                 let result = await response.json();
-                
-                if(result.error){
-                    
+
+                if (result.error) {
                 }
+            });
+
+            let loginForm = document.querySelector("#login-form");
+
+            loginForm.addEventListener("submit", async function (event) {
+                event.preventDefault();
+
+                let body = new FormData(loginForm);
+
+                let response = await fetch("/login", {
+                    method: "POST",
+                    body,
+                });
+
+                let data = await response.json();
+                console.log(data);
             });
         </script>
     </body>
