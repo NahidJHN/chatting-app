@@ -12,7 +12,7 @@ const registerValidation = [
         .withMessage("Invalid Email address")
         .custom(async (value) => {
             try {
-                const user = User.findOne({ email: value });
+                const user =await User.findOne({ email: value });
                 if (user) {
                     createHttpError("This email has already in use");
                 }

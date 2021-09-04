@@ -87,7 +87,7 @@
                             <input
                                 class="form-control"
                                 type="text"
-                                name="name"
+                                name="email"
                                 id="loginEmail"
                                 placeholder="Enter Email or Phone"
                             />
@@ -254,21 +254,21 @@
                 }
             });
 
-            let loginForm = document.querySelector("#login-form");
+            // let loginForm = document.querySelector("#login-form");
 
-            loginForm.addEventListener("submit", async function (event) {
-                event.preventDefault();
+            // loginForm.addEventListener("submit", async function (event) {
+            //     event.preventDefault();
 
-                let body = new FormData(loginForm);
+            //     let body = new FormData(loginForm);
 
-                let response = await fetch("/login", {
-                    method: "POST",
-                    body,
-                });
+            //     let response = await fetch("/login", {
+            //         method: "POST",
+            //         body,
+            //     });
 
-                let data = await response.json();
-                console.log(data);
-            });
+            //     let data = await response.json();
+            //     console.log(data);
+            // });
         </script>
     </body>
 </html>

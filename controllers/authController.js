@@ -1,6 +1,6 @@
 const User = require("../model/User");
 const bcrypt = require("bcrypt");
-const jwt=require("jsonwebtoken")
+const jwt = require("jsonwebtoken");
 const registerGetController = (req, res, next) => {
     res.render("pages/login");
 };
@@ -23,7 +23,7 @@ const registerPostController = async (req, res, next) => {
     }
 
     try {
-        const user = await newUser.save();
+        await newUser.save();
         res.status(200).json({
             message: "User Created Successfully",
         });
@@ -84,4 +84,8 @@ const loginPostController = async (req, res) => {
         console.log(error);
     }
 };
-module.exports = { registerGetController,registerPostController,loginPostController };
+module.exports = {
+    registerGetController,
+    registerPostController,
+    loginPostController,
+};

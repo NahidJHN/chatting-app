@@ -1,20 +1,20 @@
-require("dotenv")
+require("dotenv").config();
 const express = require("express");
 const { errorHundle, notFoundHundle } = require("./middlewares/errorHundle");
 const app = express();
 app.set("view engine", "ejs");
-const authRouter = require("./routes/registerRoute");
+const authRouter = require("./routes/authRoutes");
 const setMiddlewres = require("./middlewares/middleware");
 const mongoose = require("mongoose");
-
+const cookieParser = require("cookie-parser");
 //use middlewares from middlewares directory
 
-setMiddlewres(app);
+// setMiddlewres(app);
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(authRouter);
-
-app.get("/login", (req, res) => {
-    res.render("pages/login");
-});
 
 app.use(notFoundHundle);
 app.use(errorHundle);

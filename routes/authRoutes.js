@@ -11,7 +11,7 @@ const {
 } = require("../validators/userValidation");
 
 router.get("/login", registerGetController);
-router.post("/login",loginPostController)
+router.post("/login", loginPostController);
 
 router.post(
     "/register",
